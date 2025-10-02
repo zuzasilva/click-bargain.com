@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITOLYN Review - Don't Buy Before Reading This!</title>
+    <style  type="text/css">
+    :root {
+    --primary-color: #43a047;
+    --secondary-color: #5bbb60;
+    --warning-color: #dc3545;
+    --accent-color: #ffc107;
+    --text-color: #212529;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --header-bg: #ffffff;
+    --border-color: #dee2e6;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+    --text-shadow: 0 1px 1px rgb(0 0 0 / 19%);
+}
+    
+
+    /* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.test-star{
+    max-height: 1.4rem;
+    margin: 0.5rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho e navegação */
+header {
+    background-color: var(--header-bg);
+    color: white;
+    padding: 15px 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-shadow: var(--text-shadow);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+.nav-links a:hover:after {
+    width: 100%;
+}
+
+/* Seções gerais */
+section {
+    padding: 20px 0;
+}
+
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+time {
+    font-style: italic;
+    color: #FFF;
+    text-shadow: var(--text-shadow);
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 0;
+    background: linear-gradient(
+                135deg,
+                color-mix(in srgb, var(--primary-color) 80%, white),
+                var(--primary-color)
+                );
+    color: white;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, var(--primary-color), transparent 70%);
+    opacity: 0.1;
+}
+
+.hero h1 {
+    padding-top: 1.5rem;
+    line-height: normal;
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+    line-height: normal;
+    color: var(--accent-color);
+    border: none;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-shadow: -1px -1px 0 #555555, 1px -1px 0 #555555, -1px 1px 0 #555555, 1px 1px 0 #555555;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    margin: 30px 0;
+    border-radius: 8px;
+    
+
+}
+
+/* Lista de benefícios */
+.benefits-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.benefits-list li {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.benefits-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Grid de ingredientes */
+.ingredient-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.ingredient-card {
+    background: var(--header-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
+    border: 1px solid var(--border-color);
+}
+
+.ingredient-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-color);
+}
+
+.ingredient-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.ingredient-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ingredient-card li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.ingredient-card li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.ingredient-card-alt {
+    background: var(--primary-color);
+    color: white;
+    text-shadow: var(--text-shadow);
+}
+
+.ingredient-card-alt h3 {
+    color: white;
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+    text-shadow: var(--text-shadow);
+}
+
+
+.ingredient-card-alt li::before {
+    color: white;
+    text-shadow: var(--text-shadow);
+}
+
+/* Referências científicas */
+.references {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid var(--primary-color);
+    border: 1px solid var(--border-color);
+}
+
+.references h3 {
+    margin-bottom: 15px;
+}
+
+.references ul {
+    list-style: none;
+}
+
+.references li {
+    margin-bottom: 10px;
+}
+
+.references a {
+    color: var(--secondary-color);
+    word-break: break-all;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.references a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+/* Depoimentos */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color);
+}
+
+.testimonial-card:before {
+    content: "\"";
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 60px;
+    color: var(--primary-color);
+    opacity: 0.2;
+}
+
+.testimonial-card {
+    background: var(--header-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    position: relative;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.avatar {
+  border-radius: 50%;
+  max-height: 3rem;
+  margin-right: 15px;
+  border: 4px solid #87808045;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-name {
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Call to Action */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #222;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cta-button:hover:before {
+    left: 100%;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    color: #999;
+    margin-top: 20px;
+}
+
+/* Efeitos de brilho e detalhes */
+.glow-effect {
+    position: relative;
+}
+
+.glow-effect:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 20px rgba(74, 222, 171, 0.2);
+    opacity: 0;
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.glow-effect:hover:after {
+    opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+        text-shadow: var(--text-shadow);
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .ingredient-grid, .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    section {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+    
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animações suaves */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Barra de rolagem personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--header-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+li{
+    margin-left: 10px;
+}
+
+.veredict {
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-shadow: var(--text-shadow);
+    padding: 80px 0;
+    border-radius: 0;
+}
+
+.veredict h2 {
+    color: white;
+    text-shadow: var(--text-shadow);
+    border: none;
+}
+
+.veredict h2{
+    font-size: 3rem;
+}
+
+.imgs-cientific{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.img-cientific{
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    margin: 10px;
+    max-height: 300px;
+}
+
+@media (max-width: 768px) {
+    .img-cientific {
+        width: 40%;
+    }
+}
+
+.cientifc-base{
+    background-color: white;
+}
+
+
+
+.approved {
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.img-selos{
+    max-width: 86%;
+    max-height: 109px;
+}
+
+.warning {
+    text-align: center;
+    color: white;
+    text-shadow: var(--text-shadow);
+    padding: 80px 0;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--warning-color)!important;
+}
+
+.warning h3 {
+    color: white;
+    text-shadow: var(--text-shadow);
+    border: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+
+.warning h2 {
+    color: white;
+    text-shadow: var(--text-shadow);
+    border: none;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.warning p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-date{
+    padding: 1rem .5rem;
+}
+
+    </style>
+    <script>
+    function click() {
+      document.getElementById("goToPage").click();
+    }
+    </script>
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">click-bargain.com</div>
+                <ul class="nav-links">
+                    <li><a href="#beneficios" name="2c">Benefits</a></li>
+                    <li><a href="#ingredientes" name="5c">Ingredients</a></li>
+                    <li><a href="#como-funciona" name="4c">How it Works</a></li>
+                    <li><a href="#resultados" name="11c">Results</a></li>
+                    <li><a href="#onde-comprar" >Where to Buy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="container" style="padding: 3rem .5rem;">
+            <div id="headline">
+                <h1>MITOLYN Review - Don't Buy Before Reading This!</h1>
+                <h2 style="font-style: italic;">We analyzed dozens of specialized websites and forums to understand what MITOLYN is, its risks, benefits, and whether the product actually delivers results.</h2>
+            </div>
+            <div id="midia">
+                <image src="data:image/jpeg;base64,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" id="image" alt="MITOLYN" style="width: 450px; display: none;" class="hero-image"></image>    
+                <video class="hero-video" id="video" controls  style="display: none;">
+                <source src="" type="video/mp4" id="video-mp4">
+                </video>
+            </div>
+        </div>
+        <div class="container hero-date" style="flex-direction: row;">
+            <time id="date">Published on 1/10/2025 | Source: MITOLYN Official, Forums and blogs.</time>
+        </div>
+    </section>
+
+    <section style="padding: 5px;">
+        <div class="container" style="text-align: center;padding: 0;">
+            <a href="https://630d9uwoozglft7ksexez9en3b.hop.clickbank.net" class="cta-button" style="margin: 2rem;" >Buy now on the official website</a>
+        </div>
+    </section>
+
+    <section style="text-align: center; padding: 10px 0;">
+        <img src="https://i.imgur.com/aDXhHHI.png" class="img-selos">
+    </section>
+
+    <section id="beneficios" name="2c">
+        <div class="container">
+            <h2>Benefits of MITOLYN</h2>
+            <ul class="benefits-list" id="benefits-list">
+                <!-- <li>Aumenta os níveis de mitocôndrias</li>
+                <li>Promove a queima de calorias</li>
+                <li>Aumenta a energia</li>
+                <li>Reduz o estresse</li>
+                <li>Melhora o humor</li> -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="3c">
+        <div class="container">
+            <h2>What is MITOLYN?</h2>
+            <p>Mitolyn is a dietary supplement formulated with a blend of exotic nutrients and plants that aim to support healthy mitochondria levels. It seeks to optimize the body's ability to burn fat and increase energy by promoting the function of mitochondria.</p>
+        </div>
+    </section>
+
+    <section id="como-funciona" id="4c">
+        <div class="container">
+            <h2>How does MITOLYN work?</h2>
+            <p>Mitolyn works by utilizing a blend of nutrients and plants that are designed to support healthy mitochondria levels. The ingredients in Mitolyn promote the function of mitochondria, which are responsible for energy production. By improving mitochondrial function, Mitolyn aims to enhance fat burning and increase energy levels in the body.</p>
+        </div>
+    </section>
+
+    <section style="padding: 5px;">
+        <div class="container" style="text-align: center;padding: 0;">
+            <a href="https://630d9uwoozglft7ksexez9en3b.hop.clickbank.net" class="cta-button" style="margin: 2rem;" >Buy now on the official website</a>
+        </div>
+    </section>
+
+    <section id="ingredientes" name="5c">
+        <div class="container">
+            <h2>Key Ingredients and Their Benefits</h2>
+            <div class="ingredient-grid" id="ingredient-list">
+            </div>
+        </div>
+    </section>
+
+    <section id="base-cientifica" class="cientifc-base" name="6c">
+        <div class="container">
+            <h2>Scientific Basis</h2>
+            <p>Mitolyn is based on the premise that low mitochondrial levels are linked to being overweight. The formula aims to support healthy mitochondrial levels to boost metabolism and burn fat, drawing from scientific research that suggests a correlation between mitochondrial function and body weight.</p>
+            <div class="imgs-cientific">
+                <img src="https://i.imgur.com/EEx4ucp.jpeg" class="img-cientific">
+                <img src="https://i.imgur.com/sR3L8MK.jpeg" class="img-cientific">
+                <img src="https://i.imgur.com/TKEPga4.jpeg" class="img-cientific">
+            </div>
+            <div class="references" name="6c2">
+                <ul id="references">
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="mecanismo-acao" name="7c">
+        <div class="container">
+            <h2>Mechanism of Action</h2>
+            <p>Mitolyn's ingredients are designed to enhance mitochondrial function, which increases ATP production (energy) and fat burning. Specific ingredients like Maqui Berry, Rhodiola, and others, contain compounds that support mitochondrial biogenesis (creation of new mitochondria) and improve their efficiency, leading to increased energy and fat metabolism.</p>
+        </div>
+    </section>
+    <section style="padding: 5px;">
+        <div class="container" style="text-align: center;padding: 0;">
+            <a href="https://630d9uwoozglft7ksexez9en3b.hop.clickbank.net" class="cta-button" style="margin: 2rem;" >Buy now on the official website</a>
+        </div>
+    </section>
+
+    <section id="processo-uso" name="8c">
+        <div class="container">
+            <h2>Usage Process</h2>
+            <p>While our research does not state the specific dosage or timing for Mitolyn, the FAQ section suggests that the manufacturer provides guidelines on how to use the product. It's also mentioned to promote absorption and kickstart your Mitolyn journey with 20 bizarre 15 second detox tea recipes, using everyday ingredients from your kitchen.</p>
+        </div>
+    </section>
+
+    <section id="tempo-resultados">
+        <div class="container">
+            <h2>Expected Time for Results</h2>
+            <p>According to frequent reports in forums and blogs, MITOLYN often shows visible results within the first 20 days, and in some cases, within the first 10 days.</p>
+        </div>
+    </section>
+
+    <section id="problemas-resolve" name="9c">
+        <div class="container">
+            <h2>Problems that MITOLYN Solves</h2>
+            <p>Slow metabolism, Difficulty losing weight, Low energy levels, Stubborn fat stores</p>
+        </div>
+    </section>
+    <section class="warning">
+        <div class="container">
+            <h2>Warning!</h2>
+            <p>Counterfeit versions of MITOLYN are being sold on unofficial websites and marketplaces. In addition to not working, they can put your health at risk.</p>
+            <h3>For your safety, only buy from the official website.</h3>
+            <a href="https://630d9uwoozglft7ksexez9en3b.hop.clickbank.net" class="cta-button" >Buy now on the official website</a>
+        </div>
+    </section>
+
+    <section id="resultados" name="10c">
+        <div class="container">
+            <h2>Real Success Stories</h2>
+            <div class="testimonial-grid" id="testimonial-list">
+               
+            </div>
+        </div>
+    </section>
+
+    <section class="veredict">
+        <div class="container">
+            <h2>Final Verdict</h2>
+            <p>Based on our comprehensive analysis of the ingredients, scientific evidence, and user testimonials, MITOLYN appears to be a legitimate and effective supplement with fast and lasting results. Its natural formula with clinically studied ingredients offers a safe approach to improving metabolic health, and therefore this...</p>
+            <p class="approved">APPROVED!</p>
+            <img src="https://i.imgur.com/rOeo99a.png" class="img-selos">
+        </div>
+    </section>
+    <section id="onde-comprar">
+        <div class="container" style="text-align: center;">
+            <h2>Where to Buy MITOLYN</h2>
+            <p>To ensure you are purchasing the original product with guaranteed quality, we recommend buying directly from the manufacturer's official website.</p>
+            <p>There you will also find exclusive promotions and special discounts for readers of this review.</p>
+            <a href="https://630d9uwoozglft7ksexez9en3b.hop.clickbank.net" class="cta-button" >Buy now on the official website</a>
+        </div>
+    </section>
+    <section style="text-align: center;">
+        <img src="https://i.imgur.com/aDXhHHI.png" class="img-selos">
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 click-bargain.com. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: The information contained on this site is for educational purposes only and does not substitute for professional medical advice. Individual results may vary. Always consult with a healthcare professional before starting any treatment.</p>
+        </div>
+    </footer>
+</body>
+<script>
+    const initBenefits = () => {
+        const benefits = ["Supports healthy mitochondria levels", "Burns more calories", "Increases energy levels", "May help with weight loss", "Promotes overall well-being"];
+        for (let index = 0; index < benefits.length; index++) {
+        const element = benefits[index];
+        const blist = document.getElementById('benefits-list');
+        blist.innerHTML += `<li>${element}</li>`;
+        }
+    }
+    const initReferences = () => {
+        const references = ["https://pubmed.ncbi.nlm.nih.gov/27367031/","https://pubmed.ncbi.nlm.nih.gov/25972572/","https://pubmed.ncbi.nlm.nih.gov/31374571/","https://pubmed.ncbi.nlm.nih.gov/24707289/"];
+        for (let index = 0; index < references.length; index++) {
+        const element = references[index];
+        const blist = document.getElementById('references');
+        blist.innerHTML += `<li><a href="${element}" target="_blank">${element}</a></li>`;
+        }
+    }
+
+    const returnLeaf = (fillColor) => {
+        return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2.5rem" height="1rem" viewBox="0 0 3000 2547">
+            <path fill="${fillColor}" fill-rule="nonzero" fill-opacity="1" d="M 1391.261719 2498.988281 C 1311.800781 2387.636719 1245.980469 2351.078125 1043.289062 2305.722656 C 941.855469 2283.023438 722.480469 2178.789062 598.441406 2094.355469 C 466.839844 2004.78125 312.761719 1847.730469 216.453125 1705.003906 C 169.558594 1635.511719 89.796875 1471.78125 62.875 1389.738281 C -18.011719 1143.25 -20.78125 837.871094 54.144531 426.878906 C 70.394531 337.761719 84.480469 252.53125 102.683594 133.199219 C 105.484375 114.859375 111.585938 98.578125 116.242188 97.03125 C 120.902344 95.46875 136.976562 110.910156 151.960938 131.320312 C 199.320312 195.839844 302.363281 269.640625 496.226562 377.910156 C 611.011719 442.011719 805.699219 571.230469 888.601562 638.351562 C 984.929688 716.328125 1102 839.390625 1162.050781 925.78125 C 1249.5 1051.601562 1298.71875 1165.039062 1326.980469 1305.949219 C 1346.011719 1400.851562 1347.429688 1584.746094 1330.460938 1758.015625 C 1317.089844 1894.605469 1315.230469 2055.035156 1326.300781 2118.996094 C 1330.421875 2142.859375 1337.148438 2181.890625 1341.25 2205.730469 C 1349.660156 2254.703125 1376.808594 2346.667969 1410.851562 2441.574219 C 1453.199219 2559.640625 1447.160156 2577.332031 1391.261719 2498.988281 Z M 1512.359375 2307.765625 C 1506.421875 2298.148438 1520.429688 1800.1875 1529.941406 1683.234375 C 1566.640625 1231.589844 1633.558594 983.109375 1776.808594 766.488281 C 1848.359375 658.308594 2008.441406 495.5 2122.320312 415.121094 C 2311.289062 281.730469 2530.429688 174.621094 2849.878906 59.539062 C 2902.078125 40.730469 2955.839844 18.640625 2969.320312 10.441406 C 2991.058594 -2.761719 2994.371094 -3.101562 2998.429688 7.480469 C 3000.949219 14.039062 3000.378906 25.359375 2997.171875 32.621094 C 2993.960938 39.878906 2988.960938 212.210938 2986.070312 415.558594 C 2981.019531 769.980469 2979.96875 789.921875 2960.820312 896.851562 C 2903.75 1215.519531 2791.03125 1494.890625 2639.191406 1693.964844 C 2384.199219 2028.269531 2103.898438 2199.917969 1665.808594 2290.03125 C 1569.339844 2309.871094 1517.378906 2315.878906 1512.359375 2307.765625 Z M 1512.359375 2307.765625 "/>
+            </svg>`
+    }
+
+    const initIngredients = () => {
+        const ingredients = [{"name":"Maqui Berry","benefits":["Promotes mitochondria","Supports a healthy heart","Supports healthy cholesterol"]},{"name":"Rhodiola","benefits":["Promotes mitochondria","Reduces stress & improves mood","Supports brain health"]},{"name":"Haematococcus","benefits":["Promotes mitochondria","Supports healthy joints","Supports immune response"]},{"name":"Amla","benefits":["Promotes mitochondria","Supports healthy digestion","Supports vision"]},{"name":"Theobroma Cacao","benefits":["Promotes mitochondria","Supports healthy blood pressure","Natural aphrodisiac"]},{"name":"Schisandra","benefits":["Promotes mitochondria","Supports liver health","Maintains skin elasticity"]}];
+        for (let index = 0; index < ingredients.length; index++) {
+            const par =  index % 2 === 1 ;
+            const element = ingredients[index];
+            const blist = document.getElementById('ingredient-list');
+            const cardClass = par ? 'ingredient-card' : 'ingredient-card ingredient-card-alt';
+            blist.innerHTML += `<div class="${cardClass}">
+            <h3>${returnLeaf(par ? 'var(--primary-color)': 'white')} ${element.name}</h3>
+            <ul>
+            ${element.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+            </ul>
+        </div>`;
+    }};
+
+    const male_list = ['P413VyZ','d6yNGww','xu4zSCy','ZHLz3dp','XZtWbJ0','V8Cylbm','t2Hhd6V','wxZorsv'].sort(() => Math.random() - 0.5);
+    const female_list = ['O8yOsG3','qlkoYMJ','xuGObwR','Fq830VU','JGaFDs7','fHiXxmD','x9WMnrj','yUvjxPw','hbgcL8U','Y70fO0d','OUBPCSj'].sort(() => Math.random() - 0.5);
+
+    const initTestimonials = () => {
+        const testimonialList = [{"name":"Peggy B.","history":"Peggy lost 35 pounds with Mitolyn and feels more confident about her appearance.","gender":"female"},{"name":"Russell L.","history":"Russell shed 29 pounds with Mitolyn and feels lighter and more energetic, with clothes fitting better.","gender":"male"},{"name":"Connie A.","history":"Connie dropped 40 pounds with Mitolyn and has more energy to play with her kids.","gender":"female"}];
+        for (let index = 0; index < testimonialList.length; index++) {
+        const element = testimonialList[index];
+        const blist = document.getElementById('testimonial-list');
+        blist.innerHTML += `<div class="testimonial-card">
+            <p>"${element.history}"</p>
+            <div class="testimonial-footer">
+                <img src="https://i.imgur.com/${element.gender === 'male' ? male_list[index] :  female_list[index]}.png" class="avatar">
+                <div class="right">
+                    <div class="testimonial-name">${element.name}</div>
+                    <div><img src="https://i.imgur.com/rOeo99a.png" class="test-star"></div>
+                </div>
+            </div>
+        </div>`;
+        }
+    };
+
+    const showMidia = () => {
+        const midia = 'image'
+        const image = document.getElementById('image');
+        const video = document.getElementById('video');
+        if(midia == 'image'){
+          image.style.display = '';
+        }else{
+          video.style.display = '';
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        initBenefits();
+        initReferences();
+        initIngredients();
+        initTestimonials();
+        showMidia();
+    });
+
+
+</script>
+</html>
